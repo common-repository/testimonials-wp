@@ -1,0 +1,632 @@
+$colours: (
+    success-green: #5eff89,
+    error-red: #ff5f5f,
+    text-dark: #4a4a4a  
+);
+
+$darkTheme: (
+    button-bg: #4a4a4a,
+    heading-text: #4a4a4a,
+    button-text: #ffffff,
+    star-colour: #4a4a4a,
+    border-colour: lighten(#4a4a4a , 20%),
+    input-colour: #4a4a4a,
+    placeholder-colour: lighten(#4a4a4a , 30%),
+    label-colour: #4a4a4a,
+    input-border: lighten(#4a4a4a , 20%),
+    focus-outline: #4a4a4a,
+    focus-shadow: lighten(#4a4a4a , 20%),
+    profile-border: #4a4a4a,
+    slider-dot: lighten(#4a4a4a , 30%),
+    slider-dot-active: #4a4a4a,
+    slider-dot-hover: lighten(#4a4a4a , 20%)
+    
+);
+
+$lightTheme: (
+    button-bg: #8f8f8f,
+    heading-text: #8f8f8f,
+    button-text: #ffffff,
+    star-colour: #8f8f8f,
+    border-colour: lighten(#8f8f8f , 20%),
+    input-colour: #8f8f8f,
+    placeholder-colour: lighten(#8f8f8f , 30%),
+    label-colour: #8f8f8f,
+    input-border: lighten(#8f8f8f , 20%),
+    focus-outline: #8f8f8f,
+    focus-shadow: lighten(#8f8f8f , 20%),
+    profile-border: #8f8f8f,
+    slider-dot: lighten(#8f8f8f , 30%),
+    slider-dot-active: #8f8f8f,
+    slider-dot-hover: lighten(#8f8f8f , 20%)
+);
+
+$purpleTheme: (
+    button-bg: #8627ef,
+    heading-text: #8627ef,
+    button-text: #ffffff,
+    star-colour: #8627ef,
+    border-colour: lighten(#8627ef , 20%),
+    input-colour: #8627ef,
+    placeholder-colour: lighten(#8627ef , 30%),
+    label-colour: #8627ef,
+    input-border: lighten(#8627ef , 20%),
+    focus-outline: #8627ef,
+    focus-shadow: lighten(#8627ef , 20%),
+    profile-border: #8627ef,
+    slider-dot: lighten(#8627ef , 30%),
+    slider-dot-active: #8627ef,
+    slider-dot-hover: lighten(#8627ef , 20%)
+);
+
+$blueTheme: (
+    button-bg: #2740ef,
+    heading-text: #2740ef,
+    button-text: #ffffff,
+    star-colour: #2740ef,
+    border-colour:lighten(#2740ef , 20%),
+    input-colour: #2740ef,
+    placeholder-colour: lighten(#2740ef , 20%),
+    label-colour: #2740ef,
+    input-border: lighten(#2740ef , 20%),
+    focus-outline: #2740ef,
+    focus-shadow: lighten(#2740ef , 20%),
+    profile-border: #2740ef,
+    slider-dot: lighten(#2740ef , 30%),
+    slider-dot-active: #2740ef,
+    slider-dot-hover: lighten(#2740ef , 20%)
+);
+
+$greenTheme: (
+    button-bg: #10f17e,
+    heading-text: #10f17e,
+    button-text: #ffffff,
+    star-colour: #10f17e,
+    border-colour: lighten(#10f17e , 20%),
+    input-colour: #10f17e,
+    placeholder-colour: lighten(#10f17e , 30%),
+    label-colour: #10f17e,
+    input-border: lighten(#10f17e , 20%),
+    focus-outline: #10f17e,
+    focus-shadow: lighten(#10f17e , 20%),
+    profile-border: #10f17e,
+    slider-dot: lighten(#10f17e , 30%),
+    slider-dot-active: #10f17e,
+    slider-dot-hover: lighten(#10f17e , 20%)
+);
+ 
+@function colour($colour-name){
+    @return map-get($colours, $colour-name);
+}
+@function theme( $theme, $colour-name ){
+    @if $theme == darkTheme {
+        @return map-get( $darkTheme, $colour-name);
+    }@else if $theme == lightTheme {
+        @return map-get( $lightTheme, $colour-name);
+    }@else if $theme == purpleTheme {
+        @return map-get( $purpleTheme, $colour-name);
+    }@else if $theme == blueTheme {
+        @return map-get( $blueTheme, $colour-name);
+    }@else if $theme == greenTheme {
+        @return map-get( $greenTheme, $colour-name);
+    }
+}
+.s2n-rating-display{
+    width: 100%;
+    padding: 10px;
+
+    .s2n-dots{
+        list-style: none;
+        width:100%;
+        text-align:center;
+        padding: 0;
+    }
+    .s2n-dots li{
+        border-radius: 50%;
+        display: inline-block;
+        width:10px;
+        height:10px;
+        cursor: pointer;
+        margin:4px;
+    }
+    h2{
+        padding: 10px;
+    }
+    .control-circle{
+        clip-path: circle(50% at 50% 50%);
+    }
+    .img-circle{
+        clip-path: circle(50% at 50% 50%);
+    }
+    .img-square{
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+    }
+    .img-rhombus{
+        clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+    }
+    .img-triangle{
+        clip-path: polygon(50% 0%, 0 100%, 100% 100%);
+    }
+    .img-hexagon{
+        clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+    }
+    .img-ellipse{
+        clip-path: ellipse(38% 50% at 50% 50%);
+    }
+    .img-parallelogram{
+        clip-path: polygon(25% 0%, 100% 0%, 75% 100%, 0% 100%);
+    }
+    .img-circle, .img-square, .img-rhombus, .img-triangle, .img-hexagon, .img-ellipse, .img-parallelogram{
+        top: 4px;
+        left: 4px;
+        position: absolute;
+    }
+    
+
+    .s2n-testimonial-container{
+
+        padding: 10px;
+        text-align:center;
+        width: 100%;
+        margin: auto;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        overflow: hidden;
+        
+        .s2n-prev, .s2n-next{
+            display: flex;
+            justify-content: center;
+            padding:12px;
+            font-size: 2em;
+            width: 55px;
+            height: 55px;
+        }
+        .s2n-prev i {
+            padding-right: 5px;
+        }
+        .s2n-next i {
+            padding-left: 5px;
+        }
+        .three-by{
+            width: 30%;
+            float: left
+        }   
+        .two-by{
+            width: 50%;
+            float: left
+        }       
+        .s2n-testimonials{
+            width: 80%;
+            padding: 10px;
+            display: none;
+            justify-content: center;
+
+            .s2n-testimonial{
+                padding: 10px;
+                .image .image-container{
+                    margin: auto;
+                    width: 158px;
+                    height:158px;
+                    position: relative;
+                }
+                .name{
+                    font-weight: 700;
+                    font-size: 20px;
+                }
+            }
+        }
+    }
+
+}
+.s2n_display_rating{
+    font-size: 18px;
+    display: inline-block; 
+}
+.text-center{
+    text-align:center;
+}
+.s2n-rating-form-container {
+    width: 100%;
+    padding: 10px;
+    h2{
+        padding: 10px;
+    }
+    form.s2n-rate-us {
+        width: 100%;
+        .input-container{
+            width: 100%;
+            padding: 10px;
+            label {
+                width: 100%;
+                font-weight: 700;
+
+                input {
+                    width: 100%;
+                    padding: 5px;
+                    font-weight: 300;
+                }
+                input::placeholder{
+                    font-weight: 300;
+                }
+                textarea::placeholder{
+                    font-weight: 300;
+                }
+                input[type=file] {
+                    display: none;    
+                }
+                textarea {
+                    width: 100%;
+                    padding: 10px;
+                    font-weight: 300;
+                }
+                .s2n_rating {
+                    width: 100%;
+                    font-size: 18px;
+                    display: inline-block;
+                }
+            }
+            .submit-button{
+                font-weight: 500;
+                border: 0;
+                box-shadow: none;
+                border-radius: 0px; 
+                padding: 10px 30px 10px 30px;   
+            }
+            .profile_image{
+                margin: 10px;
+            }
+            .profile_image_url{
+                vertical-align: top;
+            }
+        }
+    }
+    .form-saving{
+        display: none;
+        .save-spinner{
+            font-size: 3em;
+            animation: spin 1.2s linear infinite;
+        }
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+          }
+    }
+    .form-finished{
+        display: none;
+        .success-msg{
+            display: none;
+            color: colour(success-green);
+            p{
+                color: colour(text-dark);  
+            }
+        }
+        .error-msg{
+            display: none;
+            color: colour(error-red);
+            p{
+                color: colour(text-dark);  
+            }
+        }
+        .icon{
+            font-size: 4em;
+        }
+
+    }
+}
+.dark-theme.box-border{
+    border:  1px solid  theme( darkTheme , border-colour ); 
+ }
+.dark-theme{
+    .box-border{
+        border: 1px solid theme( darkTheme , border-colour );
+    }
+    .s2n-dots li{
+        background: theme( darkTheme , slider-dot );
+    }
+    .s2n-dots li:hover{
+        background: theme( darkTheme , slider-dot-hover );
+    }
+    .s2n-dots .active{
+        background: theme( darkTheme , slider-dot-active );
+    }
+    .s2n-prev, .s2n-next{
+        color: theme( darkTheme , star-colour ); 
+    }
+    .s2n-prev:hover, .s2n-next:hover{
+        color: white;
+        background: theme( darkTheme , star-colour );
+    }
+    .image-container{
+        background: theme( darkTheme , star-colour );    
+    }
+    .form-saving .save-spinner{
+        color: theme( darkTheme , star-colour );  
+        p{
+            color: theme( darkTheme , star-colour );     
+        } 
+    }
+    .input-container{
+        label {
+            color: theme( darkTheme , label-colour ); 
+            input , textarea{
+                color: theme( darkTheme , input-colour ); 
+                border: 1px solid theme( darkTheme , input-border ); 
+            }
+            input:focus, textarea:focus{
+                outline: 2px solid theme( darkTheme , focus-outline );
+                box-shadow: 0 0 5px theme( darkTheme , focus-shadow );  
+            }
+            input::placeholder , textarea::placeholder{
+                color: theme( darkTheme , placeholder-colour ); 
+            }
+        }
+        .submit-button{
+            background: theme( darkTheme , button-bg ); 
+            color: theme( darkTheme , button-text ); 
+    
+        }
+        .s2n_rating i , .s2n_display_rating i {
+            color: theme( darkTheme , star-colour );   
+        }
+        
+    }
+    h2{
+        color: theme( darkTheme , heading-text ); 
+    }
+    
+}
+.light-theme.box-border{
+    border:  1px solid  theme( lightTheme , border-colour ); 
+ }
+.light-theme{
+    .box-border{
+        border:  1px solid  theme( lightTheme , border-colour );
+    }
+    .s2n-dots li{
+        background: theme( lightTheme , slider-dot );
+    }
+    .s2n-dots li:hover{
+        background: theme( lightTheme , slider-dot-hover );
+    }
+    .s2n-dots .active{
+        background: theme( lightTheme , slider-dot-active );
+    }
+    .s2n-prev, .s2n-next{
+        color: theme( lightTheme , star-colour ); 
+    }
+    .s2n-prev:hover, .s2n-next:hover{
+        color: white;
+        background: theme( lightTheme , star-colour );
+    }
+    .image-container{
+        background: theme( lightTheme , star-colour );    
+    }
+    .form-saving .save-spinner{
+        color: theme( lightTheme , star-colour );  
+    }
+    .form-saving p{
+        color: theme( lightTheme , star-colour );     
+    } 
+    .input-container{
+        label {
+            color: theme( lightTheme , label-colour ); 
+            input , textarea{
+                color: theme( lightTheme , input-colour );  
+                border: 1px solid theme( lightTheme , input-border );
+            }
+            input::placeholder , textarea::placeholder{
+                color: theme( lightTheme , placeholder-colour ); 
+            }
+            input:focus, textarea:focus{
+                outline: 2px solid theme( lightTheme , focus-outline );
+                box-shadow: 0 0 5px theme( lightTheme , focus-shadow );  
+            }
+        }
+        .submit-button{
+            background: theme( lightTheme , button-bg ); 
+            color: theme( lightTheme , button-text ); 
+    
+        }
+        .s2n_rating i , .s2n_display_rating i {
+            color: theme( lightTheme , star-colour );   
+        }
+    }
+    h2{
+        color: theme( lightTheme , heading-text ); 
+    }
+}
+.purple-theme.box-border{
+    border:  1px solid  theme( purpleTheme , border-colour ); 
+ }
+.purple-theme{
+    .box-border{
+        border:  1px solid  theme( purpleTheme , border-colour );
+    }
+    .s2n-dots li{
+        background: theme( purpleTheme , slider-dot );
+    }
+    .s2n-dots li:hover{
+        background: theme( purpleTheme , slider-dot-hover );
+    }
+    .s2n-dots .active{
+        background: theme( purpleTheme , slider-dot-active );
+    }
+    .s2n-prev, .s2n-next{
+        color: theme( purpleTheme , star-colour ); 
+    }
+    .s2n-prev:hover, .s2n-next:hover{
+        color: white;
+        background: theme( purpleTheme , star-colour );
+    }
+    .image-container{
+        background: theme( purpleTheme , star-colour );    
+    }
+    .form-saving .save-spinner{
+        color: theme( purpleTheme , star-colour ); 
+    }
+    .form-saving p{
+        color: theme( purpleTheme , star-colour );     
+    }  
+    .input-container{
+        label {
+            color: theme( purpleTheme , label-colour ); 
+            input , textarea{
+                color: theme( purpleTheme , input-colour );  
+                border: 1px solid theme( purpleTheme , input-border );
+            }
+            input::placeholder , textarea::placeholder{
+                color: theme( purpleTheme , placeholder-colour ); 
+            }
+            input:focus, textarea:focus{
+                outline: 2px solid theme( purpleTheme , focus-outline );
+                box-shadow: 0 0 5px theme( purpleTheme , focus-shadow );  
+            }
+        }
+        .submit-button{
+            background: theme( purpleTheme , button-bg ); 
+            color: theme( purpleTheme , button-text ); 
+    
+        }
+        .s2n_rating i , .s2n_display_rating i {
+            color: theme( purpleTheme , star-colour );   
+        }
+    }
+    h2{
+        color: theme( purpleTheme , heading-text ); 
+    }
+}
+.blue-theme.box-border{
+    border:  1px solid  theme( blueTheme , border-colour ); 
+ }
+.blue-theme{
+    .box-border{
+        border:  1px solid  theme( blueTheme , border-colour );
+    }
+    .s2n-dots li{
+        background: theme( blueTheme , slider-dot );
+    }
+    .s2n-dots li:hover{
+        background: theme( blueTheme , slider-dot-hover );
+    }
+    .s2n-dots .active{
+        background: theme( blueTheme , slider-dot-active );
+    }
+    .s2n-prev, .s2n-next{
+        color: theme( blueTheme , star-colour ); 
+    }
+    .s2n-prev:hover, .s2n-next:hover{
+        color: white;
+        background: theme( blueTheme , star-colour );
+    }
+    .image-container{
+        background: theme( blueTheme , star-colour );    
+    }
+    .form-saving .save-spinner{
+        color: theme( blueTheme , star-colour );   
+    }
+    .form-saving p{
+        color: theme( blueTheme , star-colour );     
+    }
+    .input-container{
+        label {
+            color: theme( blueTheme , label-colour ); 
+            input , textarea{
+                color: theme( blueTheme , input-colour );
+                border: 1px solid theme( blueTheme , input-border );  
+            }
+            input::placeholder , textarea::placeholder{
+                color: theme( blueTheme , placeholder-colour ); 
+            }
+            input:focus, textarea:focus{
+                outline: 2px solid theme( blueTheme , focus-outline );
+                box-shadow: 0 0 5px theme( blueTheme , focus-shadow );  
+            }
+        }
+        .submit-button{
+            background: theme( blueTheme , button-bg ); 
+            color: theme( blueTheme , button-text ); 
+    
+        }
+        .s2n_rating i , .s2n_display_rating i {
+            color: theme( blueTheme , star-colour );   
+        }
+    }
+    h2{
+        color: theme( blueTheme , heading-text ); 
+    }
+
+}
+.green-theme.box-border{
+    border:  1px solid  theme( greenTheme , border-colour ); 
+ }
+.green-theme {
+    .s2n-dots li{
+        background: theme( greenTheme , slider-dot );
+    }
+    .s2n-dots li:hover{
+        background: theme( greenTheme , slider-dot-hover );
+    }
+    .s2n-dots .active{
+        background: theme( greenTheme , slider-dot-active );
+    }
+    .s2n-prev, .s2n-next{
+        color: theme( greenTheme , star-colour ); 
+    }
+    .s2n-prev:hover, .s2n-next:hover{
+        color: white;
+        background: theme( greenTheme , star-colour );
+    }
+    .image-container{
+        background: theme( greenTheme , star-colour );    
+    }
+    .form-saving .save-spinner{
+        color: theme( greenTheme , star-colour );      
+    }
+    .form-saving p{
+        color: theme( greenTheme , star-colour );     
+    }
+    .input-container{
+        label {
+            color: theme( greenTheme , label-colour ); 
+            input, textarea{
+                color: theme( greenTheme , input-colour ); 
+                border: 1px solid theme( greenTheme , input-border );
+            }
+            input::placeholder , textarea::placeholder{
+                color: theme( greenTheme , placeholder-colour ); 
+            }
+            input:focus, textarea:focus{
+                outline: 2px solid theme( greenTheme , focus-outline );
+                box-shadow: 0 0 5px theme( greenTheme , focus-shadow );  
+            }
+        }
+        .submit-button{
+            background: theme( greenTheme , button-bg ); 
+            color: theme( greenTheme , button-text ); 
+    
+        }
+        .s2n_rating i , .s2n_display_rating i {
+            color: theme( greenTheme , star-colour );   
+        }
+    }
+    h2{
+        color: theme( greenTheme , heading-text ); 
+    }
+
+}
+.s2n-xlg{
+    font-size: 4em;    
+}
+.s2n-lg{
+    font-size: 3em;    
+}
+.s2n-md{
+    font-size: 2em;    
+}
+.s2n-sm{
+    font-size: 1.5em;    
+}
+.s2n-xs{
+    font-size: 1em;    
+}
